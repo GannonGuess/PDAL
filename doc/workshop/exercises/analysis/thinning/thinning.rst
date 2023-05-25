@@ -55,7 +55,7 @@ Visualization
 
 GQIS has the ability to switch on/off multiple data sets, and we
 are going to use that ability to view both the ``uncompahgre.laz`` and the
-``uncompahgre-thin.laz`` file.
+output ``uncompahgre-thin.copc.laz`` file.
 
 .. figure:: ../../../images/thinning-select-data.png
     :target: ../../../../_images/thinning-select-data.png
