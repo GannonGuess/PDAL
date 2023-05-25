@@ -62,18 +62,18 @@ filter will create PDAL dimensions ``Red``, ``Green``, and ``Blue``.
     },
 
 
-3. :ref:`filters.expression`
+3. :ref:`filters.range`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A small challenge is the raster will colorize many points with NODATA values.
-We are going to use the :ref:`filters.expression` to filter keep any points that
+We are going to use the :ref:`filters.range` to filter keep any points that
 have ``Red >= 1``.
 
 ::
 
     {
-        "type": "filters.expression",
-        "expression": "Red >= 1"
+        "type": "filters.range",
+        "limits": "Red[1:]"
     },
 
 4. :ref:`writers.las`
@@ -98,21 +98,9 @@ add a few options to have finer control over what is written. These include:
    consume LAS.
 3. ``dataformat_id``: Format 3 supports both time and color information
 
-5. :ref:`writers.copc`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We will then turn the ``uncompahgre-colored.laz`` into a COPC file for vizualization with QGIS.
-
-::
-
-    {
-        "type": "writers.copc",
-        "filename": "./exercises/analysis/colorization/uncompahgre-colored.copc.laz"
-    }
-
 .. note::
 
-    :ref:`writers.las` and :ref:`writers.copc` provide a number of possible options to control
+    :ref:`writers.las` provides a number of possible options to control
     how your LAS files are written.
 
 Execution
@@ -131,7 +119,7 @@ Visualization
 
 Use one of the point cloud visualization tools you installed to take a look at
 your ``uncompahgre-colored.laz`` output. In the example below, we simply
-opened the file using QGIS.
+opened the file using the http://plas.io website.
 
 .. image:: ../../../images/colorize-umpaghre-colored.png
 

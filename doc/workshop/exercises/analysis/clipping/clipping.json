@@ -9,12 +9,9 @@
             "type": "filters.overlay"
         },
         {
-            "expression": "Classification == 6",
-            "type": "filters.expression"
+            "limits": "Classification[6:6]",
+            "type": "filters.range"
         },
-        {
-            "type": "writers.copc",
-            "filename": "./exercises/analysis/clipping/stadium.copc.laz"
-        }
+        "./exercises/analysis/clipping/stadium.las"
     ]
 }
