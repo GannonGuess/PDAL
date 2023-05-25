@@ -66,6 +66,17 @@ capability to reproject the data for us on-the-fly:
     :target: ../../../../_images/clipping-view-polygons.png
 
 .. note::
+    Notice the numbers on the buildings and trees. These are the classifations given in
+    the LIDAR Point Classes or `LAS Specification`_. You can sort and single out these in JSON filters.
+    ex. "limits": "Classification[3:4]" which only shows classes 3 to 4 which 
+    are medium and high vegitation. 
+
+.. _`LAS Specification`: https://www.asprs.org/wp-content/uploads/2019/03/LAS_1_4_r14.pdf
+.. image:: ../../../images/ASPRS_Class.png
+    :target: ../../../../_images/ASPRS_Class.png
+    
+
+.. note::
 
     The GeoJSON file does not have an externally-defined coordinate system,
     so we are explicitly setting one with the LayerSRS parameter. If your
@@ -101,11 +112,11 @@ polygons. Using the VRT we defined in `Data preparation`_,
 assign the values from the ``CLS`` column to the ``Classification`` field.
 
 
-3. :ref:`filters.range`
+3. :ref:`filters.expression`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The attributes in the ``attributes.json`` file include polygons with values
-``2``, ``5``, and ``6``. We will use :ref:`filters.range` to keep points with
+``2``, ``5``, and ``6``. We will use :ref:`filters.expression` to keep points with
 ``Classification`` values in the range of ``6:6``.
 
 4. Writer
@@ -131,8 +142,7 @@ Visualization
 
 Use one of the point cloud visualization tools you installed to take a look at
 your ``./exercises/analysis/clipping/stadium.las`` output.
-In the example below, we opened the file to view it using the http://plas.io
-website.
+In the example below, we opened the file to view it using QGIS.
 
 
 .. image:: ../../../images/clipping-stadium-clipped.png

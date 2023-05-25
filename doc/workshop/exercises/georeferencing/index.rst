@@ -43,7 +43,7 @@ point cloud:
   particular, there are a few points *very* close to the sensor which were
   probably caused by air returns or laser light reflecting off of part of the
   airplane or sensor.  These points have very high intensity values, which will
-  screw up our visualization.  We will use the :ref:`filters.range` PDAL filter
+  screw up our visualization.  We will use the :ref:`filters.expression` PDAL filter
   to drop all points with very high intensity values.
 
 .. note::
@@ -67,10 +67,10 @@ Invoke the following command, substituting accordingly, into your ` Conda Shell`
 Visualization
 .................
 
-View your georeferenced point cloud in http://plas.io.
+View your georeferenced point cloud in QGIS.
 
-.. figure:: ../../images/georeference-plasio.png
-    :target: ../../../_images/georeference-plasio.png
+.. figure:: ../../images/georeference-QGIS.png
+    :target: ../../../_images/georeference-QGIS.png
 
     Our airborne laser point cloud after georeferencing, reprojection, and
     intensity filtering.
