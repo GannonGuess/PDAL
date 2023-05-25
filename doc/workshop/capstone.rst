@@ -32,10 +32,6 @@ Given the following pipeline for fetching the data, complete the rest of the tas
                 "minor_version": "2",
                 "dataformat_id": "0",
                 "filename":"st-stephens.laz"
-            },
-            {
-                "type": "writers.copc",
-                "filename": "st-stephens.copc.laz"
             }
         ]
     }
@@ -47,7 +43,7 @@ Given the following pipeline for fetching the data, complete the rest of the tas
 * Classify ground points using :ref:`filters.smrf` (See :ref:`workshop-ground`)
 * Compute height above ground using :ref:`filters.hag_nn`
 * Generate a digital terrain model (DTM) using :ref:`writers.gdal` (See :ref:`workshop-dtm`)
-* Find the average vegetative height model using :ref:`writers.gdal`
+* Generate a average vegetative height model using :ref:`writers.gdal`
 
 .. note::
 

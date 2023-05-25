@@ -22,14 +22,7 @@ We will create mesh models of a building and its surrounds using an entwine
 data input source.
 
 After running each command, the output `.ply` file can be viewed in Meshlab or
-`CloudCompare`_.
-
-.. _`CloudCompare`: https://www.danielgm.net/cc/
-
-.. note:: 
-
-    Since QGIS doesn't support `.ply` files we can't use it for this exercise. 
-    In order to use QGIS you can covert the files to laz or `.copc` using PDAL.
+CloudCompare.
 
 .. seealso::
 
@@ -39,7 +32,7 @@ After running each command, the output `.ply` file can be viewed in Meshlab or
 .. note::
 
     This example will be using the output of using :ref:`workshop-clipping`
-    exercise, specifically using ``stadium.copc.las`` file.  Please produce that
+    exercise, specifically using ``stadium.las`` file.  Please produce that
     file by following that exercise before starting this one.
 
 .. note::
@@ -56,14 +49,14 @@ Invoke the following command, substituting accordingly, in your `Conda Shell`:
 
 .. code-block:: console
 
-    $ pdal translate -i ./exercises/analysis/clipping/stadium.copc.laz \
+    $ pdal translate -i ./exercises/analysis/clipping/stadium.las \
     -o ./exercises/analysis/meshing/first-mesh.ply \
     poisson --filters.poisson.depth=16 \
     --verbose 4
 
 .. code-block:: doscon
 
-    > pdal translate -i ./exercises/analysis/clipping/stadium.copc.laz ^
+    > pdal translate -i ./exercises/analysis/clipping/stadium.las ^
     -o ./exercises/analysis/meshing/first-mesh.ply ^
     poisson --filters.poisson.depth=16 ^
     --verbose 4
@@ -94,7 +87,7 @@ class 2, and buildings as 6.
 
 In this exercise we will create a poisson mesh surface of a building and the
 ground surrounding it, using the same data subset as above and adding a
-:ref:`filters.expression` stage to limit the set of points used in mesh creation.
+:ref:`filters.range` stage to limit the set of points used in mesh creation.
 
 Command
 ................................................................................
@@ -103,7 +96,7 @@ Invoke the following command, substituting accordingly, in your `Conda Shell`:
 
 .. code-block:: console
 
-    $ pdal translate -i ./exercises/analysis/clipping/stadium.copc.laz \
+    $ pdal translate -i ./exercises/analysis/clipping/stadium.las \
     -o ./exercises/analysis/meshing/building-exercise.ply \
     range poisson \
     --filters.range.limits="Classification[2:2],Classification[6:6]" \
@@ -114,7 +107,7 @@ Invoke the following command, substituting accordingly, in your `Conda Shell`:
 
     > pdal translate -i ept://http://act-2015-rgb.s3.amazonaws.com ^
     -o ./exercises/analysis/meshing/building-exercise.ply ^
-    expression poisson ^
+    range poisson ^
     --filters.range.limits="Classification[2:2],Classification[6:6]" ^
     --filters.poisson.depth=16 ^
     --verbose 4
