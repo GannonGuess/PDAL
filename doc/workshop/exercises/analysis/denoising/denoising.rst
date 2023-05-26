@@ -37,7 +37,7 @@ Pipeline breakdown
 After our pipeline errata, the first item we define in the pipeline is the
 point cloud file we're going to read.
 
-::
+.. code-block:: json
 
     "./exercises/analysis/denoising/18TWK820985.laz",
 
@@ -47,7 +47,7 @@ point cloud file we're going to read.
 The PDAL :ref:`outlier filter<filters.outlier>` does most of the work for this
 operation.
 
-::
+.. code-block:: json
 
     {
         "type": "filters.outlier",
@@ -64,19 +64,19 @@ operation.
 At this point, the outliers have been classified per the LAS specification as
 low/noise points with a classification value of 7. The :ref:`range
 filter<filters.expression>` can remove these noise points by constructing a
-:ref:`range <ranges>` with the value ``Classification != 7``, which passes
+:ref:`range <filters.expression>` with the value ``Classification != 7``, which passes
 every point with a ``Classification`` value **not** equal to 7.
 
 Even with the :ref:`filters.outlier` operation, there is still a cluster of
 points with extremely negative ``Z`` values. These are some artifact or
 mis-computation of processing, and we don't want these points. We can construct
-another :ref:`range <ranges>` to keep only points that are within the range
+another :ref:`range <filters.expression>` to keep only points that are within the range
 :math:`-100 <= Z <= 3000`.
 
-Both :ref:`ranges <ranges>` are passed as a comma-separated list to the
-:ref:`range filter<filters.expression>` via the ``expression`` option.
+Both :ref:`ranges <filters.expression>` are passed as a AND-separated list to the
+:ref:`expression based range filter<filters.expression>` via the ``expression`` option.
 
-::
+.. code-block:: json
 
     {
         "type": "filters.expression",
@@ -91,7 +91,7 @@ Both :ref:`ranges <ranges>` are passed as a comma-separated list to the
 We could just define the ``clean.laz`` filename, but we want to
 add a few options to have finer control over what is written. These include:
 
-::
+.. code-block:: json
 
     {
         "type": "writers.las",
@@ -111,15 +111,20 @@ add a few options to have finer control over what is written. These include:
 5. :ref:`writers.copc`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We will then turn the ``clean.laz`` file into a COPC file for vizualization with QGIS.
+We will then turn the ``clean.laz`` file into a COPC file for vizualization with QGIS
+using the stage below.
 
-::
+.. code-block:: json
 
     {
         "type": "writers.copc",
         "filename": "./exercises/analysis/colorization/clean.copc.laz"
+        "forward": "all"
     }
 
+1. ``forward``: List of header fields to be preserved from LAS input file. In this case, we want ``all``
+   fields to be preserved.
+   
 .. note::
 
     :ref:`writers.las` and :ref:`writers.copc` provide a number of possible options to control
