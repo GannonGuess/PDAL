@@ -3,7 +3,7 @@
 Entwine
 ================================================================================
 
-.. include:: ../../includes/substitutions.rst
+.. include:: ../includes/substitutions.rst
 
 Exercise
 --------------------------------------------------------------------------------
@@ -100,8 +100,8 @@ We will use a sample data set from Dublin, Ireland https://viewer.copc.io/?r=htt
 
 2. Visualize the data in http://plas.io
 
-    .. image:: ../../images/entwine-view.png
-        :target: ../../../_images/entwine-view.png
+    .. image:: ../images/entwine-view.png
+        :target: ../../_images/entwine-view.png
 
 
 Notes
