@@ -3,7 +3,7 @@
 Removing noise
 ================================================================================
 
-.. include:: ../../../includes/substitutions.rst
+.. include:: ../../includes/substitutions.rst
 
 .. index:: Denoising, outliers
 
@@ -129,8 +129,8 @@ Use one of the point cloud visualization tools you installed to take a look at
 your ``clean.laz`` output. In the example below, we simply
 opened the file using the `Fugro Viewer`_
 
-.. image:: ../../../images/denoise-fugro.png
-    :target: ../../../../_images/denoise-fugro.png
+.. image:: ../../images/denoise-fugro.png
+    :target: ../../../_images/denoise-fugro.png
 
 .. _`Fugro Viewer`: https://hub.fugro.com/fugroviewer_socialpg/
 

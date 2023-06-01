@@ -3,7 +3,7 @@
 Colorizing points with imagery
 ================================================================================
 
-.. include:: ../../../includes/substitutions.rst
+.. include:: ../../includes/substitutions.rst
 
 .. index:: Colorization, GDAL, Raster, RGB
 
@@ -123,7 +123,7 @@ opened the file using the http://plas.io website. If the point cloud is not
 colorized upon opening the file, drag one of the “Colorization” options onto the 
 cloud from the settings bar to the right.
 
-.. image:: ../../../images/colorize-umpaghre-colored.png
+.. image:: ../../images/colorize-umpaghre-colored.png
 
 
 Notes
