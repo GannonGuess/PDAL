@@ -68,8 +68,6 @@ and passes it into :ref:`filters.reprojection` and :ref:`filters.expression`.
 The reprojection filter sets the spatial reference for the COPC data. 
 The expression filter selects only the points with an ``Intensity`` between 0 and 500.
 
-.. image:: ../../images/georeferencing-run-command.png
-    :target: ../../../_images/georeferencing-run-command.png
 
 Visualization
 .................
