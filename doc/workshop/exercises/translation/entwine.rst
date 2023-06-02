@@ -59,7 +59,7 @@ of tasks. This pipeline will collect the sample data set and convert it to a :re
 
 .. _`Developer Console`: https://developers.google.com/web/tools/chrome-devtools/console/
 
-1. Verify that the COPC data look ok:
+3. Verify that the COPC data look ok:
 
     .. code-block:: console
 
@@ -74,33 +74,37 @@ of tasks. This pipeline will collect the sample data set and convert it to a :re
         }
         $ pdal info dublin.copc.laz -p 0
         {
-            "file_size": 56441298,
-            "filename": "dublin.laz",
-            "now": "2022-05-16T09:57:45-0700",
-            "pdal_version": "2.3.0 (git-version: Release)",
+            "file_size": 90310030,
+            "filename": "dublin.copc.laz",
+            "now": "2023-06-02T13:40:36-0500",
+            "pdal_version": "2.5.3 (git-version: Release)",
             "points":
             {
-                "point":
-                {
-                    "Classification": 4,
-                    "EdgeOfFlightLine": 0,
-                    "Intensity": 265,
-                    "NumberOfReturns": 2,
-                    "PointId": 0,
-                    "PointSourceId": 16,
-                    "ReturnNumber": 1,
-                    "ScanAngleRank": 2,
-                    "ScanDirectionFlag": 1,
-                    "UserData": 0,
-                    "X": -695945.82,
-                    "Y": 7046284.13,
-                    "Z": 122.01
+              "point":
+              {
+                "ClassFlags": 0,
+                "Classification": 2,
+                "EdgeOfFlightLine": 0,
+                "GpsTime": 402930.3873,
+                "Intensity": 220,
+                "NumberOfReturns": 1,
+                "OriginId": 0,
+                "PointId": 0,
+                "PointSourceId": 34,
+                "ReturnNumber": 1,
+                "ScanAngleRank": 22.99799919,
+                "ScanChannel": 0,
+                "ScanDirectionFlag": 1,
+                "UserData": 0,
+                "X": -695085.89,
+                "Y": 7048577.02,
+                "Z": 7.8
                 }
             },
             "reader": "readers.las"
         }
 
-2. Visualize the data in QGIS
+4. Visualize the data in QGIS
 
     .. image:: ../../images/entwine-view.png
         :target: ../../../_images/entwine-view.png
