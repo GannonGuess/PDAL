@@ -47,6 +47,11 @@ Invoke the following command, substituting accordingly, in your `Conda Shell`:
 .. literalinclude:: ./thinning-run-dartsample-win.txt
     :linenos:
 
+The ``translate`` command in the first line will take in the input ``uncompahgre.laz``
+file and output the file ``uncompahgre-thin.copc.laz`` defined on the second line.
+The third line takes the ``uncompahgre-thin.copc.laz`` as input and uses :ref:`filters.sample` to
+define the minimum allowed distance between points.
+
 Visualization
 ................................................................................
 

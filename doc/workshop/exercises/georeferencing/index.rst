@@ -61,6 +61,13 @@ Invoke the following command, substituting accordingly, into your ` Conda Shell`
 
 .. literalinclude:: georeferencing-command-win.txt
 
+The ``translate`` command in the first line will take in the input 
+``S1C1_csd_004.csd`` from the second line and output the file ``S1C1_csd_004.copc.laz`` 
+defined on the third line. The fourth line takes the ``S1C1_csd_004.copc.laz`` as input 
+and passes it into :ref:`filters.reprojection` and :ref:`filters.expression`. 
+The reprojection filter sets the spatial reference for the COPC data. 
+The expression filter selects only the points with an ``Intensity`` between 0 and 500.
+
 .. image:: ../../images/georeferencing-run-command.png
     :target: ../../../_images/georeferencing-run-command.png
 
