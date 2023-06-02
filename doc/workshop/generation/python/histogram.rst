@@ -70,10 +70,7 @@ Run ``pdal pipeline``
 
 .. code-block:: console
 
-    $ pdal pipeline ./exercises/python/histogram.json
-    anything:47: UserWarning: Attempting to set identical left == right == 0 results in singular transformations; automatically expanding.
-
-    $
+    $ pdal pipeline ./exercises/python/histogram.json anything:47: UserWarning: Attempting to set identical low and high xlims makes transformation singular; automatically expanding.
 
 Output
 ................................................................................
